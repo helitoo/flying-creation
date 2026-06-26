@@ -67,12 +67,13 @@ const Contact = () => {
   });
 
   return (
-    <section id="contact" className="w-full min-h-screen pl-10 pr-5">
+    <section id="contact" className="w-full min-h-screen pl-10 pr-5 pb-10">
       <h2
         id="contact-title"
-        className="text-slate-800 font-extrabold text-6xl mt-10"
+        className="text-slate-800 font-extrabold text-4xl md:text-6xl mt-10"
       >
-        Hope to see you
+        Hope to <br className="md:hidden" />
+        see you
       </h2>
       <h3
         id="contact-subscription"
@@ -80,12 +81,15 @@ const Contact = () => {
       >
         Cao Thái Bảo
       </h3>
-      <div ref={listRef} className="m-5 md:ml-30 md:mr-30 flex flex-col">
+      <div
+        ref={listRef}
+        className="mt-5 md:m-5 md:ml-30 md:mr-30 flex flex-col"
+      >
         {contacts.map((item, index) => (
           <ContactInfo contact={item} key={index} />
         ))}
       </div>
-      <p className="mt-30 text-slate-400">
+      <p className="mt-30 text-slate-800">
         Thank you,{" "}
         <a
           href="https://sketchfab.com/medraphc"

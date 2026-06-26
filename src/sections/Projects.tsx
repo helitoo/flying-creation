@@ -51,11 +51,11 @@ const Projects = () => {
     <div id="projects" className="min-h-screen w-full px-5 py-5">
       <h2
         id="projects-title"
-        className="text-white font-extrabold text-6xl text-center py-10"
+        className="text-white font-extrabold text-4xl md:text-6xl text-center py-10"
       >
         Projects
       </h2>
-      <div ref={listRef} className="flex flex-wrap gap-5 mr-5">
+      <div ref={listRef} className="flex flex-wrap gap-5 md:mr-5">
         {projects.map((project, i) => (
           <ProjectInfo project={project} key={i} />
         ))}

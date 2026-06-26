@@ -35,17 +35,15 @@ const ProjectInfo = ({
               </div>
             )}
             <div className="flex flex-col justify-start items-start">
-              <h3 className="font-bold text-xl text-center line-clamp-1">
-                {project.name}
-              </h3>
-              <span className="text-slate-400 text-sm tracking-wider">
+              <h3 className="font-bold text-base md:text-xl">{project.name}</h3>
+              <span className="text-slate-400 text-xs md:text-sm tracking-wider">
                 {project.duration}
               </span>
             </div>
           </div>
 
           {/* Mô tả ngắn gọn */}
-          <p className="text-justify leading-relaxed mb-4 line-clamp-5">
+          <p className="text-justify leading-relaxed mb-4 text-sm md:text-base">
             {project.description}
           </p>
 
@@ -78,7 +76,7 @@ const ProjectInfo = ({
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-blue-600 hover:text-blue-800 hover:underline truncate"
+              className="font-semibold text-blue-600 hover:text-blue-800 hover:underline truncate  text-sm md:text-base"
             >
               {formatDemoUrl(project.demo)}
             </a>

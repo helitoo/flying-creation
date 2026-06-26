@@ -66,10 +66,10 @@ const ContactInfo = ({
       />
 
       {/* Content stays above the bg */}
-      <div className="relative z-10 text-2xl flex items-center justify-center w-8 h-8">
+      <div className="relative z-10 text-sm md:text-2xl flex items-center justify-center w-8 h-8">
         {contact.icon}
       </div>
-      <span className="relative z-10 font-medium text-lg">{contact.name}</span>
+      <span className="relative z-10 text-sm md:text-lg">{contact.name}</span>
     </>
   );
 

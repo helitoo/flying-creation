@@ -37,7 +37,7 @@ const Navbar = () => {
         <a
           key={i}
           href={`#${item.id}`}
-          className="text-white font-bold"
+          className="text-white font-bold text-sm md:text-base"
           onMouseEnter={handleEnter}
           onMouseLeave={handleLeave}
         >

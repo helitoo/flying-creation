@@ -59,7 +59,7 @@ const Home = () => {
       <Navbar />
       <h1
         id="home-title"
-        className="text-white text-center font-extrabold text-8xl mt-5 text-shadow-md"
+        className="text-white text-center font-extrabold text-5xl md:text-8xl mt-5 text-shadow-md"
       >
         FLYING CREATION
       </h1>

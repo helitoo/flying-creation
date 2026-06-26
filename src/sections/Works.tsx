@@ -112,17 +112,20 @@ const Works = () => {
 
   return (
     <section id="works" className="w-full min-h-screen px-5">
-      <h2 id="works-title" className="text-white font-extrabold text-6xl">
+      <h2
+        id="works-title"
+        className="text-white font-extrabold text-4xl md:text-6xl"
+      >
         Experience
       </h2>
       <h3 id="works-subscription" className="text-white font-extrabold">
         Cao Thái Bảo
       </h3>
-      <div ref={listRef} className="ml-10 mr-5 mt-5 space-y-8">
+      <div ref={listRef} className="md:ml-10 md:mr-5 mt-5 space-y-8">
         {works.map((work, i) => (
           <div
             key={i}
-            className="flex gap-6 w-full md:w-125 shrink-0"
+            className="flex gap-2 md:gap-6 w-full md:w-125 shrink-0"
             onMouseEnter={handleEnter}
             onMouseLeave={handleLeave}
           >
@@ -144,12 +147,16 @@ const Works = () => {
             </div>
 
             {/* Content */}
-            <div className="work-card flex-1 rounded-xl p-4 shadow-lg bg-white">
+            <div className="work-card flex-1 rounded-xl p-2 md:p-4 shadow-lg bg-white">
               <h3 className="font-semibold">{work.title}</h3>
 
-              <p className="text-sm text-slate-400">{work.address}</p>
+              <p className="text-xs md:text-sm text-slate-400">
+                {work.address}
+              </p>
 
-              <p className="mt-2 text-sm font-medium">{work.duration}</p>
+              <p className="mt-2 text-xs md:text-sm font-medium">
+                {work.duration}
+              </p>
             </div>
           </div>
         ))}
