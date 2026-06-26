@@ -1,9 +1,8 @@
 import { works } from "../data/works";
 import { useGSAP } from "@gsap/react";
-import { useRef, type RefObject } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { changeAppBgColor, handleEnter, handleLeave } from "../utils";
-import type { CameraControls } from "@react-three/drei";
 
 const Works = () => {
   const listRef = useRef<HTMLDivElement>(null);

@@ -52,7 +52,7 @@ const Contact = () => {
 
     const projects = container.querySelectorAll(".contact-info");
 
-    projects.forEach((project, i) =>
+    projects.forEach((project) =>
       gsap.set(project, {
         opacity: 0,
         y: -10,

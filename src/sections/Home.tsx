@@ -3,8 +3,6 @@ import Navbar from "../components/Navbar";
 import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
 import { changeAppBgColor } from "../utils";
-import type { RefObject } from "react";
-import type { CameraControls } from "@react-three/drei";
 
 const Home = () => {
   useGSAP(() => {

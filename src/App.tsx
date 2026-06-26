@@ -1,4 +1,4 @@
-import { useEffect, useRef, type Ref } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
@@ -9,8 +9,6 @@ import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import { Canvas } from "@react-three/fiber";
 import Model from "./components/Model";
-import CameraDebugger from "./components/CameraDebugger";
-import type { PerspectiveCamera } from "three";
 import { CameraControls } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
 import { getCameraAt, type Section } from "./data/nav";
