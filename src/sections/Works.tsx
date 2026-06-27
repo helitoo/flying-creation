@@ -123,12 +123,7 @@ const Works = () => {
       </h3>
       <div ref={listRef} className="md:ml-10 md:mr-5 mt-5 space-y-8">
         {works.map((work, i) => (
-          <div
-            key={i}
-            className="flex gap-2 md:gap-6 w-full md:w-125 shrink-0"
-            onMouseEnter={handleEnter}
-            onMouseLeave={handleLeave}
-          >
+          <div key={i} className="flex gap-2 md:gap-6 w-full md:w-125 shrink-0">
             <div className="relative flex flex-col items-center">
               {/* Dot */}
               <div className="work-dot z-10 flex items-center justify-center size-15 rounded-full bg-white shadow-lg">
@@ -147,7 +142,11 @@ const Works = () => {
             </div>
 
             {/* Content */}
-            <div className="work-card flex-1 rounded-xl p-2 md:p-4 shadow-lg bg-white">
+            <div
+              className="work-card flex-1 rounded-xl p-2 md:p-4 shadow-lg bg-white"
+              onMouseEnter={handleEnter}
+              onMouseLeave={handleLeave}
+            >
               <h3 className="font-semibold">{work.title}</h3>
 
               <p className="text-xs md:text-sm text-slate-400">

@@ -17,6 +17,8 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
 
 const App = () => {
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
   const containerRef = useRef<HTMLDivElement>(null);
   const cameraControls = useRef<CameraControls>(null!);
 
@@ -69,7 +71,7 @@ const App = () => {
       className="relative w-full min-h-screen bg-transparent"
     >
       {/* Canvas cố định làm nền */}
-      <div className="fixed top-0 left-0 w-full h-screen z-0 pointer-events-none">
+      <div className="fixed top-0 left-0 w-full h-dvh z-0 pointer-events-none">
         <Canvas
           className="w-full h-full"
           camera={{
@@ -96,7 +98,7 @@ const App = () => {
           />
           <ambientLight intensity={2} />
           <directionalLight position={[5, 5, 5]} intensity={2} />
-          <Model />
+          <Model scale={isMobile ? 0.8 : 1} />
         </Canvas>
       </div>
 

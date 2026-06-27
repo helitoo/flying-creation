@@ -13,6 +13,12 @@ export const works: WorkITem[] = [
     duration: "2026 - Present",
   },
   {
+    image: "/works/gamapp-logo.jpg",
+    address: "UIT GamApp Studios (Academic club)",
+    title: "Artist",
+    duration: "2025 - Present",
+  },
+  {
     image: "/works/bht-logo.png",
     address: "Academic club - Department of Information Systems",
     title: "Head of Media & Communications",
