@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
@@ -9,6 +9,7 @@ import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import { Canvas } from "@react-three/fiber";
 import Model from "./components/Model";
+import LoadingPage from "./components/LoadingPage";
 import { CameraControls } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
 import { getCameraAt, type Section } from "./data/nav";
@@ -98,9 +99,14 @@ const App = () => {
           />
           <ambientLight intensity={2} />
           <directionalLight position={[5, 5, 5]} intensity={2} />
-          <Model scale={isMobile ? 0.8 : 1} />
+          <Suspense fallback={null}>
+            <Model scale={isMobile ? 0.8 : 1} />
+          </Suspense>
         </Canvas>
       </div>
+
+      {/* Màn hình loading khi mô hình đang load */}
+      <LoadingPage />
 
       {/* Các section scroll bình thường phía trên */}
       <div className="relative z-10 w-full">

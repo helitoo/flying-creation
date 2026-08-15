@@ -1,15 +1,16 @@
 export type ProjectItem = {
-  image?: string;
-  name: string;
-  duration: string;
-  description: string;
-  techs: string[];
-  github?: string;
-  demo?: string;
-};
+  image?: string
+  name: string
+  duration: string
+  description: string
+  techs: string[]
+  github?: string
+  demo?: string
+}
 
 export const projects: ProjectItem[] = [
   {
+    image: "/projects/iton.png",
     name: "IT-Obsidian-Notebook",
     duration: "Sep 26, 2025 – Present",
     description: "An Obsidian-based IT documents.",
@@ -19,6 +20,23 @@ export const projects: ProjectItem[] = [
       "https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white",
     ],
     github: "https://github.com/Ileriayo/markdown-badges",
+    demo: "https://iton-notebook.vercel.app/",
+  },
+  {
+    image: "/projects/uit-imap-logo.png",
+    name: "UIT iMap",
+    duration: "Apr 20, 2026 – Aug 16, 2026",
+    description:
+      "A 3D map web application of the University of Information Technology (UIT) combined with 360-degree panoramic photos. Allows students, visitors, and others to quickly search for classrooms, buildings, and directions.",
+    techs: [
+      "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
+      "https://img.shields.io/badge/radix%20ui-161618.svg?style=for-the-badge&logo=radix-ui&logoColor=white",
+      "https://img.shields.io/badge/model%20viewer-%23666666.svg?style=for-the-badge&logo=google&logoColor=%23ffffff",
+      "https://img.shields.io/badge/marzipano-%2324a8e0.svg?style=for-the-badge",
+      "https://img.shields.io/badge/Driver.js-%23ffe74d.svg?style=for-the-badge",
+    ],
+    github: "https://github.com/UIT-iMap/uit-imap",
+    demo: "https://link.uit.edu.vn/UIT-360",
   },
   {
     name: "reposearcher",
@@ -32,20 +50,6 @@ export const projects: ProjectItem[] = [
     github: "https://github.com/helitoo/reposearcher",
   },
   {
-    image: "/projects/uit-imap-logo.png",
-    name: "UIT iMap",
-    duration: "Apr 20, 2026 – May 21, 2026",
-    description:
-      "An interactive 3D online map for the University of Information Technology (UIT) – VNU-HCM. It provides students, staff, and visitors with an intuitive way to navigate the campus, discover facilities, and find information about rooms and buildings.",
-    techs: [
-      "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
-      "https://img.shields.io/badge/shadcn/ui-%23000000?style=for-the-badge&logo=shadcnui&logoColor=white",
-      "https://img.shields.io/badge/Google%20Model%20Viewer-4285F4?style=for-the-badge&logoColor=white",
-    ],
-    github: "https://github.com/helitoo/uit-imap",
-    demo: "https://uit-imap.vercel.app",
-  },
-  {
     image: "/projects/btvh-logo.png",
     name: "Museum of Vietnamese Culture",
     duration: "Feb 11, 2026 – Mar 15, 2026",
@@ -56,8 +60,8 @@ export const projects: ProjectItem[] = [
       "https://img.shields.io/badge/Google%20Sheets-%2334A853?style=for-the-badge&logo=googlesheets&logoColor=white",
       "https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white",
     ],
-    github: "https://github.com/helitoo/cong-dai-hoc",
-    demo: "https://cong-dai-hoc.vercel.app",
+    github: "https://github.com/helitoo/bao-tang-van-hoa",
+    demo: "https://btvh.vercel.app",
   },
   {
     image: "/projects/cdh-logo.png",
@@ -79,4 +83,4 @@ export const projects: ProjectItem[] = [
     github: "https://github.com/helitoo/cong-dai-hoc",
     demo: "https://cong-dai-hoc.vercel.app",
   },
-];
+]

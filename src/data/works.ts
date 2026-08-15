@@ -1,9 +1,9 @@
 export type WorkITem = {
-  image: string;
-  address: string;
-  title: string;
-  duration: string;
-};
+  image: string
+  address: string
+  title: string
+  duration: string
+}
 
 export const works: WorkITem[] = [
   {
@@ -11,6 +11,12 @@ export const works: WorkITem[] = [
     address: "Catspeak",
     title: "IT Developer",
     duration: "2026 - Present",
+  },
+  {
+    image: "/works/uit-logo.png",
+    address: "University of Information technology (UIT) - VNU-HCM",
+    title: "Software development partner",
+    duration: "2026",
   },
   {
     image: "/works/gamapp-logo.jpg",
@@ -30,4 +36,4 @@ export const works: WorkITem[] = [
     title: "Banchelor in Management Information Systems",
     duration: "2024 - Present",
   },
-];
+]
