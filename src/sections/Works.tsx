@@ -151,7 +151,7 @@ const Works = () => {
   };
 
   return (
-    <section id="works" className="w-full py-28 px-6 bg-white overflow-hidden">
+    <section id="works" className="w-full py-28 px-6 bg-white dark:bg-[#09090b] overflow-hidden transition-colors duration-300">
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -161,15 +161,15 @@ const Works = () => {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 text-xs font-semibold tracking-wider uppercase mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300 text-xs font-semibold tracking-wider uppercase mb-3">
               <Briefcase className="w-3.5 h-3.5" />
               <span>Career & Experience</span>
-              <Sparkles className="w-3 h-3 text-neutral-400" />
+              <Sparkles className="w-3 h-3 text-neutral-400 dark:text-neutral-500" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-3">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-3">
               Experience
             </h2>
-            <p className="text-neutral-500 text-base md:text-lg max-w-xl">
+            <p className="text-neutral-500 dark:text-neutral-400 text-base md:text-lg max-w-xl">
               Responsive timeline blocking of my technical roles, academic leadership, and software partnerships.
             </p>
           </motion.div>
@@ -179,14 +179,14 @@ const Works = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="flex items-center gap-1 p-1 bg-neutral-100/90 border border-neutral-200/80 rounded-full self-start md:self-auto shrink-0 shadow-xs"
+            className="flex items-center gap-1 p-1 bg-neutral-100/90 dark:bg-neutral-800/90 border border-neutral-200/80 dark:border-neutral-700/80 rounded-full self-start md:self-auto shrink-0 shadow-xs"
           >
             <button
               onClick={() => setActiveTab("blocks")}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 activeTab === "blocks"
-                  ? "bg-white text-neutral-900 shadow-xs border border-neutral-200/60"
-                  : "text-neutral-500 hover:text-neutral-900"
+                  ? "bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white shadow-xs border border-neutral-200/60 dark:border-neutral-600/60"
+                  : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
               }`}
             >
               <BarChart2 className="w-3.5 h-3.5" />
@@ -196,8 +196,8 @@ const Works = () => {
               onClick={() => setActiveTab("cards")}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 activeTab === "cards"
-                  ? "bg-white text-neutral-900 shadow-xs border border-neutral-200/60"
-                  : "text-neutral-500 hover:text-neutral-900"
+                  ? "bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white shadow-xs border border-neutral-200/60 dark:border-neutral-600/60"
+                  : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
               }`}
             >
               <LayoutGrid className="w-3.5 h-3.5" />
@@ -222,7 +222,7 @@ const Works = () => {
               <div className="apple-glass-card rounded-3xl p-6 md:p-8 overflow-x-auto">
                 <div className="min-w-[620px]">
                   {/* Timeline Header Scale / Years Axis */}
-                  <div className="relative flex justify-between border-b border-neutral-200/80 pb-4 mb-6 text-xs font-bold text-neutral-400 select-none">
+                  <div className="relative flex justify-between border-b border-neutral-200/80 dark:border-neutral-800/80 pb-4 mb-6 text-xs font-bold text-neutral-400 dark:text-neutral-500 select-none">
                     {years.map((year, i) => (
                       <div
                         key={year}
@@ -232,10 +232,10 @@ const Works = () => {
                           transform: i === 0 ? "none" : i === years.length - 1 ? "none" : "translateX(-50%)",
                         }}
                       >
-                        <span className="text-neutral-800 text-sm font-semibold tracking-tight">
+                        <span className="text-neutral-800 dark:text-neutral-200 text-sm font-semibold tracking-tight">
                           {year}
                         </span>
-                        <span className="text-[10px] text-neutral-400 font-medium">
+                        <span className="text-[10px] text-neutral-400 dark:text-neutral-500 font-medium">
                           {year === endYear ? "Present" : `Q1 – Q4`}
                         </span>
                       </div>
@@ -245,11 +245,11 @@ const Works = () => {
                   {/* Visual Grid Guide Lines & Logo Time Blocks */}
                   <div className="relative space-y-3">
                     {/* Vertical background grid lines */}
-                    <div className="absolute inset-0 flex justify-between pointer-events-none opacity-40">
+                    <div className="absolute inset-0 flex justify-between pointer-events-none opacity-40 dark:opacity-20">
                       {years.map((year, i) => (
                         <div
                           key={year}
-                          className="h-full border-r border-dashed border-neutral-300/70"
+                          className="h-full border-r border-dashed border-neutral-300/70 dark:border-neutral-700/70"
                           style={{ width: i === years.length - 1 ? "0px" : "100%" }}
                         />
                       ))}
@@ -289,12 +289,12 @@ const Works = () => {
                             transition={{ type: "spring", stiffness: 400, damping: 25 }}
                             className={`absolute h-14 rounded-2xl p-1.5 flex items-center justify-center border transition-all duration-300 cursor-pointer shadow-xs group/block ${
                               work.isActive
-                                ? "bg-white border-neutral-300 shadow-[0_4px_20px_rgba(0,0,0,0.06)] ring-1 ring-neutral-900/10 hover:border-neutral-900"
-                                : "bg-neutral-50/90 border-neutral-200/80 hover:bg-white hover:border-neutral-400"
+                                ? "bg-white dark:bg-neutral-800 border-neutral-300 dark:border-neutral-600 shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] ring-1 ring-neutral-900/10 dark:ring-white/10 hover:border-neutral-900 dark:hover:border-neutral-400"
+                                : "bg-neutral-50/90 dark:bg-neutral-800/50 border-neutral-200/80 dark:border-neutral-700/60 hover:bg-white dark:hover:bg-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600"
                             }`}
                           >
                             {/* Centered Logo Thumbnail */}
-                            <div className="w-10 h-10 rounded-xl bg-white border border-neutral-200/70 p-1.5 flex items-center justify-center shrink-0 shadow-xs pointer-events-none group-hover/block:scale-105 transition-transform">
+                            <div className="w-10 h-10 rounded-xl bg-white dark:bg-neutral-800 border border-neutral-200/70 dark:border-neutral-700/70 p-1.5 flex items-center justify-center shrink-0 shadow-xs pointer-events-none group-hover/block:scale-105 transition-transform">
                               <img
                                 src={work.image}
                                 alt={work.title}
@@ -307,7 +307,7 @@ const Works = () => {
                             {work.isActive && (
                               <span className="absolute -top-1 -right-1 flex h-3 w-3">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-white"></span>
+                                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-white dark:border-neutral-900"></span>
                               </span>
                             )}
 
@@ -319,7 +319,7 @@ const Works = () => {
                                   animate={{ opacity: 1, y: 0, scale: 1 }}
                                   exit={{ opacity: 0, y: 8, scale: 0.95 }}
                                   transition={{ duration: 0.15 }}
-                                  className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-3.5 py-2.5 rounded-xl bg-neutral-900 text-white shadow-xl flex flex-col items-center gap-0.5 w-64 max-w-[280px] text-center"
+                                  className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-3.5 py-2.5 rounded-xl bg-neutral-900/95 dark:bg-neutral-800/95 backdrop-blur-md text-white border border-neutral-800 dark:border-neutral-700 shadow-xl flex flex-col items-center gap-0.5 w-64 max-w-[280px] text-center"
                                 >
                                   <span className="text-xs font-bold text-white truncate w-full block text-center" title={work.title}>
                                     {work.title}
@@ -335,7 +335,7 @@ const Works = () => {
                                   <span className="text-[9px] text-neutral-400 font-medium tracking-wide mt-1 opacity-90 whitespace-nowrap">
                                     Click to inspect details →
                                   </span>
-                                  <div className="w-2 h-2 bg-neutral-900 rotate-45 absolute -bottom-1 left-1/2 -translate-x-1/2" />
+                                  <div className="w-2 h-2 bg-neutral-900 dark:bg-neutral-800 border-r border-b border-neutral-800 dark:border-neutral-700 rotate-45 absolute -bottom-1 left-1/2 -translate-x-1/2" />
                                 </motion.div>
                               )}
                             </AnimatePresence>
@@ -348,21 +348,21 @@ const Works = () => {
               </div>
 
               {/* Legend & Stats Summary */}
-              <div className="mt-6 flex flex-wrap items-center justify-between gap-4 px-2 text-xs text-neutral-500">
+              <div className="mt-6 flex flex-wrap items-center justify-between gap-4 px-2 text-xs text-neutral-500 dark:text-neutral-400">
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
                     <span>Current / Ongoing Role</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-neutral-300 dark:bg-neutral-600" />
                     <span>Completed Milestone</span>
                   </div>
-                  <span className="text-neutral-400 italic">💡 Click any time block to view detailed description</span>
+                  <span className="text-neutral-400 dark:text-neutral-500 italic">💡 Click any time block to view detailed description</span>
                 </div>
                 <div className="flex items-center gap-1.5 font-medium">
-                  <Clock className="w-3.5 h-3.5 text-neutral-400" />
-                  <span>Timeline range: <strong>{startYear} – Present</strong> (~{totalSpan}+ years span)</span>
+                  <Clock className="w-3.5 h-3.5 text-neutral-400 dark:text-neutral-500" />
+                  <span>Timeline range: <strong className="text-neutral-700 dark:text-neutral-300">{startYear} – Present</strong> (~{totalSpan}+ years span)</span>
                 </div>
               </div>
             </motion.div>
@@ -394,14 +394,14 @@ const Works = () => {
                     whileHover={{ y: -3 }}
                     className={`apple-glass-card rounded-2xl p-6 flex flex-col gap-4 group transition-all duration-300 ${
                       isFocused
-                        ? "ring-2 ring-neutral-900 border-neutral-900 shadow-md bg-neutral-50/40"
+                        ? "ring-2 ring-neutral-900 dark:ring-white border-neutral-900 dark:border-white shadow-md bg-neutral-50/40 dark:bg-neutral-800/40"
                         : ""
                     }`}
                   >
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                       {/* Organization & Role */}
                       <div className="flex items-start gap-4 flex-1">
-                        <div className="w-14 h-14 rounded-2xl bg-neutral-50 border border-neutral-200/80 p-2 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform duration-300 self-start">
+                        <div className="w-14 h-14 rounded-2xl bg-neutral-50 dark:bg-neutral-800 border border-neutral-200/80 dark:border-neutral-700/80 p-2 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform duration-300 self-start">
                           <img
                             src={work.image}
                             alt={work.address}
@@ -413,22 +413,22 @@ const Works = () => {
 
                         <div className="flex-1">
                           <div className="flex items-center gap-2">
-                            <h3 className="text-base md:text-lg font-bold text-neutral-900 tracking-tight">
+                            <h3 className="text-base md:text-lg font-bold text-neutral-900 dark:text-white tracking-tight">
                               {work.title}
                             </h3>
                             {work.isActive && (
-                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
+                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 text-xs font-semibold border border-emerald-200 dark:border-emerald-800/60">
                                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                                 Present
                               </span>
                             )}
                           </div>
-                          <div className="flex items-center gap-1.5 text-neutral-500 text-xs md:text-sm mt-0.5 italic">
+                          <div className="flex items-center gap-1.5 text-neutral-500 dark:text-neutral-400 text-xs md:text-sm mt-0.5 italic">
                             {work.address}
                           </div>
                           {/* Optional Work Description */}
                           {work.description && (
-                            <p className="mt-4 text-sm text-neutral-600 leading-relaxed font-normal">
+                            <p className="mt-4 text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed font-normal">
                               {work.description}
                             </p>
                           )}
@@ -437,29 +437,27 @@ const Works = () => {
 
                       {/* Date Tag */}
                       <div className="sm:self-start shrink-0 flex flex-wrap items-center gap-2">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-100 text-neutral-700 text-xs font-semibold border border-neutral-200/60">
-                          <Calendar className="w-3 h-3 text-neutral-400" />
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 text-xs font-semibold border border-neutral-200/60 dark:border-neutral-700/60">
+                          <Calendar className="w-3 h-3 text-neutral-400 dark:text-neutral-500" />
                           {work.rangeLabel}
                         </span>
-                        <span className="px-2.5 py-1 rounded-full bg-neutral-900 text-white text-xs font-medium">
+                        <span className="px-2.5 py-1 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-xs font-medium">
                           {work.durationLabel}
                         </span>
                       </div>
                     </div>
 
-                    
-
                     {/* Responsive Mini Time-Block Continuum Meter */}
-                    <div className="pt-2 border-t border-neutral-100 flex flex-col gap-1.5">
-                      <div className="flex justify-between items-center text-[10px] text-neutral-400 font-semibold uppercase tracking-wider">
+                    <div className="pt-2 border-t border-neutral-100 dark:border-neutral-800 flex flex-col gap-1.5">
+                      <div className="flex justify-between items-center text-[10px] text-neutral-400 dark:text-neutral-500 font-semibold uppercase tracking-wider">
                         <span>{startYear}</span>
                         <span>Timeline Position</span>
                         <span>{endYear}</span>
                       </div>
-                      <div className="relative w-full h-2 rounded-full bg-neutral-100 overflow-hidden">
+                      <div className="relative w-full h-2 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
                         <div
                           className={`absolute top-0 bottom-0 rounded-full transition-all duration-500 ${
-                            work.isActive ? "bg-neutral-900" : "bg-neutral-400"
+                            work.isActive ? "bg-neutral-900 dark:bg-white" : "bg-neutral-400 dark:bg-neutral-600"
                           }`}
                           style={{
                             left: `${work.leftPercent}%`,

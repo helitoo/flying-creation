@@ -1,3 +1,4 @@
+import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/Navbar";
 import Home from "./sections/Home";
 import Works from "./sections/Works";
@@ -6,18 +7,23 @@ import Contact from "./sections/Contact";
 
 const App = () => {
   return (
-    <div id="app" className="min-h-screen w-full bg-white text-neutral-900 selection:bg-neutral-900 selection:text-white">
-      {/* Floating Pill Navigation */}
-      <Navbar />
+    <ThemeProvider>
+      <div
+        id="app"
+        className="min-h-screen w-full bg-white dark:bg-[#09090b] text-neutral-900 dark:text-neutral-100 selection:bg-neutral-900 selection:text-white dark:selection:bg-white dark:selection:text-neutral-900 transition-colors duration-300"
+      >
+        {/* Floating Pill Navigation */}
+        <Navbar />
 
-      {/* Main Sections */}
-      <main className="w-full">
-        <Home />
-        <Works />
-        <Projects />
-        <Contact />
-      </main>
-    </div>
+        {/* Main Sections */}
+        <main className="w-full">
+          <Home />
+          <Works />
+          <Projects />
+          <Contact />
+        </main>
+      </div>
+    </ThemeProvider>
   );
 };
 

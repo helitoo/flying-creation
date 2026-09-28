@@ -11,7 +11,7 @@ const breakpointColumns = {
 
 const Projects = () => {
   return (
-    <section id="projects" className="w-full py-28 px-6 bg-white">
+    <section id="projects" className="w-full py-28 px-6 bg-white dark:bg-[#09090b] transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -21,15 +21,15 @@ const Projects = () => {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 text-xs font-semibold tracking-wider uppercase mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300 text-xs font-semibold tracking-wider uppercase mb-3">
             <Code2 className="w-3.5 h-3.5" />
             <span>Portfolio</span>
-            <Sparkles className="w-3 h-3 text-neutral-400" />
+            <Sparkles className="w-3 h-3 text-neutral-400 dark:text-neutral-500" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-3">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-3">
             Featured Projects
           </h2>
-          <p className="text-neutral-500 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-neutral-500 dark:text-neutral-400 text-base md:text-lg max-w-2xl mx-auto">
             A showcase of web applications, AI tools, and data systems engineered for performance and utility.
           </p>
         </motion.div>

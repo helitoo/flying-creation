@@ -9,7 +9,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="w-full pt-28 pb-16 px-6 bg-white border-t border-neutral-100">
+    <section id="contact" className="w-full pt-28 pb-16 px-6 bg-white dark:bg-[#09090b] border-t border-neutral-100 dark:border-neutral-800/80 transition-colors duration-300">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -19,14 +19,14 @@ const Contact = () => {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 text-xs font-semibold tracking-wider uppercase mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300 text-xs font-semibold tracking-wider uppercase mb-3">
             <MessageSquare className="w-3.5 h-3.5" />
             <span>Get in Touch</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-3">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-3">
             Let&apos;s Connect
           </h2>
-          <p className="text-neutral-500 text-base md:text-lg max-w-lg mx-auto">
+          <p className="text-neutral-500 dark:text-neutral-400 text-base md:text-lg max-w-lg mx-auto">
             Whether you have a question, a project in mind, or simply want to chat technology, feel free to reach out.
           </p>
         </motion.div>
@@ -37,7 +37,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-3xl bg-neutral-900 text-white p-8 md:p-10 text-center mb-12 shadow-xl relative overflow-hidden"
+          className="rounded-3xl bg-neutral-900 dark:bg-neutral-900/90 border border-neutral-800 text-white p-8 md:p-10 text-center mb-12 shadow-xl relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-[radial-gradient(#333_1px,transparent_1px)] [background-size:16px_16px] opacity-20 pointer-events-none" />
           <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-3 relative z-10">
@@ -63,9 +63,9 @@ const Contact = () => {
         </div>
 
         {/* Minimal Apple-style Footer */}
-        <div className="pt-8 border-t border-neutral-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500 font-medium">
+        <div className="pt-8 border-t border-neutral-200/80 dark:border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500 dark:text-neutral-400 font-medium">
           <div className="flex items-center gap-2">
-            <span className="font-semibold text-neutral-900">Cao Thái Bảo</span>
+            <span className="font-semibold text-neutral-900 dark:text-white">Cao Thái Bảo</span>
             <span>—</span>
             <span>Flying Creation © {new Date().getFullYear()}</span>
           </div>
@@ -73,7 +73,7 @@ const Contact = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1 text-neutral-600 hover:text-neutral-900 transition-colors p-1"
+              className="inline-flex items-center gap-1 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors p-1 cursor-pointer"
             >
               <span>Back to Top</span>
               <ArrowUp className="w-3.5 h-3.5" />

@@ -26,7 +26,7 @@ const ProjectInfo = ({ project, index }: { project: ProjectItem; index: number }
         <div className="flex items-start justify-between gap-4 mb-4">
           <div className="flex items-center gap-3.5">
             {project.image ? (
-              <div className="w-12 h-12 rounded-xl bg-neutral-50 border border-neutral-200/80 p-2 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-xl bg-neutral-50 dark:bg-neutral-800 border border-neutral-200/80 dark:border-neutral-700/80 p-2 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform duration-300">
                 <img
                   src={project.image}
                   alt={project.name}
@@ -36,16 +36,16 @@ const ProjectInfo = ({ project, index }: { project: ProjectItem; index: number }
                 />
               </div>
             ) : (
-              <div className="w-12 h-12 rounded-xl bg-neutral-100 border border-neutral-200/80 flex items-center justify-center text-neutral-700 shrink-0">
-                <Folder className="w-6 h-6 text-neutral-500" />
+              <div className="w-12 h-12 rounded-xl bg-neutral-100 dark:bg-neutral-800 border border-neutral-200/80 dark:border-neutral-700/80 flex items-center justify-center text-neutral-700 dark:text-neutral-300 shrink-0">
+                <Folder className="w-6 h-6 text-neutral-500 dark:text-neutral-400" />
               </div>
             )}
 
             <div>
-              <h3 className="text-lg md:text-xl font-bold text-neutral-900 tracking-tight group-hover:text-black transition-colors">
+              <h3 className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white tracking-tight group-hover:text-black dark:group-hover:text-white transition-colors">
                 {project.name}
               </h3>
-              <div className="flex items-center gap-1.5 text-xs text-neutral-400 font-medium mt-0.5">
+              <div className="flex items-center gap-1.5 text-xs text-neutral-400 dark:text-neutral-500 font-medium mt-0.5">
                 <Calendar className="w-3 h-3" />
                 <span>{project.duration}</span>
               </div>
@@ -54,7 +54,7 @@ const ProjectInfo = ({ project, index }: { project: ProjectItem; index: number }
         </div>
 
         {/* Description */}
-        <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6 font-normal">
+        <p className="text-sm md:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed mb-6 font-normal">
           {project.description}
         </p>
 
@@ -80,19 +80,19 @@ const ProjectInfo = ({ project, index }: { project: ProjectItem; index: number }
       </div>
 
       {/* Footer Links & Actions */}
-      <div className="pt-4 border-t border-neutral-100 flex items-center justify-between gap-3 mt-auto">
+      <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between gap-3 mt-auto">
         {project.demo ? (
           <a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-neutral-900 hover:text-neutral-600 transition-colors group/link"
+            className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-neutral-900 dark:text-neutral-200 hover:text-neutral-600 dark:hover:text-white transition-colors group/link"
           >
             <span>{formatDemoUrl(project.demo)}</span>
             <ExternalLink className="w-3.5 h-3.5 opacity-60 group-hover/link:opacity-100 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-all" />
           </a>
         ) : (
-          <span className="text-xs text-neutral-400 italic">Repository Project</span>
+          <span className="text-xs text-neutral-400 dark:text-neutral-500 italic">Repository Project</span>
         )}
 
         {project.github && (
@@ -100,7 +100,7 @@ const ProjectInfo = ({ project, index }: { project: ProjectItem; index: number }
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 border border-neutral-200/60 transition-all shrink-0"
+            className="p-2 rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 border border-neutral-200/60 dark:border-neutral-700/60 transition-all shrink-0"
             title="View on GitHub"
             aria-label={`View ${project.name} on GitHub`}
           >
