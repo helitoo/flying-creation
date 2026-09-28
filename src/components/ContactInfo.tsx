@@ -1,100 +1,93 @@
-import React, { useRef } from "react";
-import { gsap } from "gsap";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import type { ContactItem } from "../data/contacts";
+import { ArrowUpRight, Check, Copy } from "lucide-react";
 
-const ContactInfo = ({
-  contact,
-  ...props
-}: {
+interface ContactInfoProps {
   contact: ContactItem;
-} & React.HTMLAttributes<HTMLElement>) => {
-  const bgRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLElement>(null);
-  const delayRef = useRef<gsap.core.Tween | null>(null);
+  index: number;
+}
 
-  const handleMouseEnter = () => {
-    delayRef.current = gsap.delayedCall(0.1, () => {
-      gsap.to(textRef.current, {
-        color: "#ffffff",
-        duration: 0.2,
-      });
+const ContactInfo = ({ contact, index }: ContactInfoProps) => {
+  const [copied, setCopied] = useState(false);
+  const isEmail = contact.name.includes("@");
 
-      gsap.fromTo(
-        bgRef.current,
-        {
-          scaleX: 0,
-          transformOrigin: "left center",
-        },
-        {
-          scaleX: 1,
-          duration: 0.2,
-          ease: "power2.out",
-        },
-      );
-    });
+  const handleCopy = (e: React.MouseEvent) => {
+    if (isEmail) {
+      e.preventDefault();
+      navigator.clipboard.writeText(contact.name);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
   };
 
-  const handleMouseLeave = () => {
-    delayRef.current?.kill();
+  const Content = (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{
+        duration: 0.4,
+        delay: index * 0.08,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      whileHover={{ y: -3 }}
+      className="apple-glass-card rounded-2xl p-4 md:p-5 flex items-center justify-between group cursor-pointer w-full transition-all"
+    >
+      <div className="flex items-center gap-4 min-w-0">
+        <div className="w-11 h-11 rounded-xl bg-neutral-100/80 border border-neutral-200/80 flex items-center justify-center text-neutral-800 shrink-0 group-hover:bg-neutral-900 group-hover:text-white transition-colors duration-300">
+          <div className="w-5 h-5 flex items-center justify-center [&>svg]:w-5 [&>svg]:h-5">
+            {contact.icon}
+          </div>
+        </div>
 
-    gsap.killTweensOf(bgRef.current);
-    gsap.killTweensOf(textRef.current);
-
-    gsap.to(textRef.current, {
-      color: "#1e293b", // slate-800
-      duration: 0.2,
-    });
-
-    gsap.to(bgRef.current, {
-      scaleX: 0,
-      transformOrigin: "left center",
-      duration: 0.2,
-      ease: "power2.in",
-    });
-  };
-
-  const itemClassName =
-    "contact-info relative flex items-center gap-4 text-sky-400 py-2 pl-5 border-l-5 border-sky-400 overflow-hidden cursor-pointer text-slate-800";
-
-  const itemContent = (
-    <>
-      {/* Animated background overlay */}
-      <div
-        ref={bgRef}
-        className="absolute inset-0 bg-sky-400 pointer-events-none"
-        style={{ transform: "scaleX(0)", transformOrigin: "left center" }}
-      />
-
-      {/* Content stays above the bg */}
-      <div className="relative z-10 text-sm md:text-2xl flex items-center justify-center w-8 h-8">
-        {contact.icon}
+        <div className="flex flex-col min-w-0">
+          <span className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">
+            {isEmail ? "Email Address" : "Profile Link"}
+          </span>
+          <span className="text-sm md:text-base font-semibold text-neutral-900 truncate group-hover:text-black">
+            {contact.name}
+          </span>
+        </div>
       </div>
-      <span className="relative z-10 text-sm md:text-lg">{contact.name}</span>
-    </>
+
+      <div className="flex items-center gap-2 pl-3 shrink-0">
+        {isEmail && (
+          <button
+            onClick={handleCopy}
+            title="Copy email to clipboard"
+            className="p-2 rounded-full hover:bg-neutral-100 text-neutral-400 hover:text-neutral-700 transition-colors"
+          >
+            {copied ? (
+              <Check className="w-4 h-4 text-emerald-600" />
+            ) : (
+              <Copy className="w-4 h-4" />
+            )}
+          </button>
+        )}
+        <div className="w-8 h-8 rounded-full flex items-center justify-center text-neutral-400 group-hover:text-neutral-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
+          <ArrowUpRight className="w-4 h-4" />
+        </div>
+      </div>
+    </motion.div>
   );
 
-  return contact.url ? (
-    <a
-      ref={textRef as React.RefObject<HTMLAnchorElement>}
-      href={contact.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={itemClassName}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      {...props}
-    >
-      {itemContent}
-    </a>
-  ) : (
-    <div
-      ref={textRef as React.RefObject<HTMLDivElement>}
-      className={itemClassName}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      {...props}
-    >
-      {itemContent}
+  if (contact.url) {
+    return (
+      <a
+        href={contact.url}
+        target={isEmail ? "_self" : "_blank"}
+        rel="noopener noreferrer"
+        className="block w-full focus:outline-none"
+      >
+        {Content}
+      </a>
+    );
+  }
+
+  return (
+    <div onClick={handleCopy} className="block w-full">
+      {Content}
     </div>
   );
 };

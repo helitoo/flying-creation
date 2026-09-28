@@ -10,6 +10,17 @@ export type ProjectItem = {
 
 export const projects: ProjectItem[] = [
   {
+    image: "/projects/silic.png",
+    name: "Silic",
+    duration: "Aug 26, 2026",
+    description: "Silic is a Multi-Attribute Knowledge Graph Note-Taking App. Silic supports multi-step queries, advanced queries, graph plotting, data analysis, can operate offline, and integrates with Google Drive™.",
+    techs: [
+      "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
+    ],
+    github: "https://github.com/helitoo/silic",
+    demo: "https://silic.kemlib.com/",
+  },
+  {
     image: "/projects/iton.png",
     name: "IT-Obsidian-Notebook",
     duration: "Sep 26, 2025 – Present",
@@ -19,7 +30,7 @@ export const projects: ProjectItem[] = [
       "https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white",
       "https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white",
     ],
-    github: "https://github.com/Ileriayo/markdown-badges",
+    github: "https://github.com/helitoo/IT-Obsidian-Notebook",
     demo: "https://iton-notebook.vercel.app/",
   },
   {
