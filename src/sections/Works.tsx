@@ -292,7 +292,6 @@ const Works = () => {
                                 ? "bg-white border-neutral-300 shadow-[0_4px_20px_rgba(0,0,0,0.06)] ring-1 ring-neutral-900/10 hover:border-neutral-900"
                                 : "bg-neutral-50/90 border-neutral-200/80 hover:bg-white hover:border-neutral-400"
                             }`}
-                            title={`Click to view details: ${work.title} at ${work.address}`}
                           >
                             {/* Centered Logo Thumbnail */}
                             <div className="w-10 h-10 rounded-xl bg-white border border-neutral-200/70 p-1.5 flex items-center justify-center shrink-0 shadow-xs pointer-events-none group-hover/block:scale-105 transition-transform">
@@ -320,14 +319,16 @@ const Works = () => {
                                   animate={{ opacity: 1, y: 0, scale: 1 }}
                                   exit={{ opacity: 0, y: 8, scale: 0.95 }}
                                   transition={{ duration: 0.15 }}
-                                  className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-3.5 py-2 rounded-xl bg-neutral-900 text-white shadow-xl flex flex-col items-center gap-0.5 max-w-xs text-center"
+                                  className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-3.5 py-2.5 rounded-xl bg-neutral-900 text-white shadow-xl flex flex-col items-center gap-0.5 w-64 max-w-[280px] text-center"
                                 >
-                                  <span className="text-xs font-bold whitespace-nowrap">{work.title}</span>
-                                  <span className="text-[10px] text-neutral-400 font-medium whitespace-nowrap">
+                                  <span className="text-xs font-bold text-white truncate w-full block text-center" title={work.title}>
+                                    {work.title}
+                                  </span>
+                                  <span className="text-[10px] text-neutral-400 font-medium truncate w-full block text-center" title={`${work.address} • ${work.rangeLabel}`}>
                                     {work.address} • {work.rangeLabel}
                                   </span>
                                   {work.description && (
-                                    <span className="text-[10px] text-neutral-300 font-normal leading-tight mt-1 line-clamp-2">
+                                    <span className="text-[10px] text-neutral-300 font-normal leading-tight mt-1 line-clamp-2 w-full text-center" title={work.description}>
                                       {work.description}
                                     </span>
                                   )}
