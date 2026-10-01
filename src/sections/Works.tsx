@@ -428,7 +428,7 @@ const Works = () => {
                           </div>
                           {/* Optional Work Description */}
                           {work.description && (
-                            <p className="mt-4 text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed font-normal">
+                            <p className="mt-4 text-sm text-justify text-neutral-600 dark:text-neutral-300 leading-relaxed font-normal">
                               {work.description}
                             </p>
                           )}

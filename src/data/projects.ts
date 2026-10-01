@@ -16,6 +16,7 @@ export const projects: ProjectItem[] = [
     description: "Silic is a Multi-Attribute Knowledge Graph Note-Taking App. Silic supports multi-step queries, advanced queries, graph plotting, data analysis, can operate offline, and integrates with Google Drive™.",
     techs: [
       "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
+      "https://img.shields.io/badge/Google%20Drive-%234285F4.svg?style=for-the-badge&logo=googledrive&logoColor=white"
     ],
     github: "https://github.com/helitoo/silic",
     demo: "https://silic.kemlib.com/",
@@ -29,6 +30,7 @@ export const projects: ProjectItem[] = [
       "https://img.shields.io/badge/Obsidian-%23483699.svg?style=for-the-badge&logo=obsidian&logoColor=white",
       "https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white",
       "https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white",
+      "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
     ],
     github: "https://github.com/helitoo/IT-Obsidian-Notebook",
     demo: "https://iton-notebook.vercel.app/",
@@ -45,6 +47,7 @@ export const projects: ProjectItem[] = [
       "https://img.shields.io/badge/model%20viewer-%23666666.svg?style=for-the-badge&logo=google&logoColor=%23ffffff",
       "https://img.shields.io/badge/marzipano-%2324a8e0.svg?style=for-the-badge",
       "https://img.shields.io/badge/Driver.js-%23ffe74d.svg?style=for-the-badge",
+      "https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB",
     ],
     github: "https://github.com/UIT-iMap/uit-imap",
     demo: "https://link.uit.edu.vn/UIT-360",

@@ -12,6 +12,7 @@ export const works: WorkITem[] = [
     image: "/works/catspeak-logo.jpg",
     address: "Catspeak",
     title: "IT Developer",
+    description: "Develop an administration page and other user-side functionalities for a real-time online course website system",
     start: "2026-06",
     end: "present"
   },
@@ -19,7 +20,7 @@ export const works: WorkITem[] = [
     image: "/works/uit-logo.png",
     address: "BEI Lab - University of Information Technology (UIT)",
     title: "Member of Team Art",
-    description: "Build 3D models of the school and lab products using Unity, Blender, and SketchUp",
+    description: "Build 3D models of schools and other laboratory products using Unity, Blender, and SketchUp for integration into web and IoT systems",
     start: "2026-09",
     end: "present",
   },
@@ -35,6 +36,7 @@ export const works: WorkITem[] = [
     image: "/works/gamapp-logo.jpg",
     address: "UIT GamApp Studios (Academic club)",
     title: "Member of Team Art",
+    description: "Illustrating for game products of the club and the Software Engineering department",
     start: "2025",
     end: "present"
   },
@@ -42,6 +44,7 @@ export const works: WorkITem[] = [
     image: "/works/bht-logo.png",
     address: "Academic club - Department of Information Systems",
     title: "Head of Media & Communications",
+    description: "Develop communication strategies, product management, and human resource management for the communications department",
     start: "2025",
     end: "2026-09"
   },
@@ -49,6 +52,7 @@ export const works: WorkITem[] = [
     image: "/works/uit-logo.png",
     address: "University of Information technology (UIT) - VNU-HCM",
     title: "Banchelor in Management Information Systems",
+    description: "Learn about surveying the current situation and developing software solutions for businesses; including ERP, business data collection, processing and analysis, and developing mobile/desktop/website products for businesses",
     start: "2024",
     end: "present"
   },
